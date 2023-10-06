@@ -7,15 +7,20 @@
 </head>
 <body>
     <button id="btn">fetch IpAddress</button>
-    <h1>IP Address: </h1>
-    <h1 id="ip"></h1>
+    <div style="display: flex;gap:20px">
+
+        <h1>IP Address: </h1>
+        <h1 id="ip"></h1>
+    </div>
 </body>
 
 <script>
     document.getElementById('btn').addEventListener('click', async()=>{
         let res =await fetch('https://getipaddress.onrender.com')
         res = await res.json();
+        document.getElementById('ip').innerText = res.ipAddress;
         console.log(res);
-    })
+
+})
 </script>
 </html>
