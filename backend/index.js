@@ -6,7 +6,7 @@ app.use(cors({
 }));
 app.get('/',async function(req, res) {
     try{
-        console.log(req)
+        console.log(req.header('x-forwarded-for'), 'ip')
         const ipAddress =req.header('x-forwarded-for') || req.ip;
         res.send({ipAddress});
     }catch(err){res.send({err, status: false})}
