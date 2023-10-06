@@ -7,7 +7,7 @@ app.use(cors({
 app.get('/',async function(req, res) {
     try{
         const ipAddress = req.ip;
-        res.send({ipAddress, resp});
+        res.send({ipAddress});
     }catch(err){res.send({err, status: false})}
 });
 
