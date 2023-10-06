@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="btn">fetch IpAddress</button>
+    <h1>IP Address: </h1>
+    <h1 id="ip"></h1>
+</body>
+
+<script>
+    document.getElementById('btn').addEventListener('click', async()=>{
+        let res =await fetch('https://getipaddress.onrender.com')
+        res = await res.json();
+        console.log(res);
+    })
+</script>
+</html>
